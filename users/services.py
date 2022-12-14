@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-
+"""Password hide"""
 class PasswordField(serializers.CharField):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("style", {})
@@ -9,3 +9,4 @@ class PasswordField(serializers.CharField):
         kwargs["write_only"] = True
 
         super().__init__(*args, **kwargs)
+

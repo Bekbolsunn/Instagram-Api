@@ -46,8 +46,8 @@ THIRD_PARTY_APPS = [
 PROJECT_APPS = [
     "users",
     "oauth_app",
-    # "base",
     "posts",
+    # "base",
     # "media",
 ]
 
@@ -158,7 +158,7 @@ SIMPLE_JWT = {
     'JWK_URL': None,
     'LEEWAY': 0,
 
-    'AUTH_HEADER_TYPES': ('Token    ',),
+    'AUTH_HEADER_TYPES': ('JWT',),
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
@@ -175,20 +175,14 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+"""
+OAuth 2.0 = Google provider
+"""
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'APP': {
-#             'client_id': '536832678335-d8ccn2t1l26ii711atpftg2045ql8nml.apps.googleusercontent.com',
-#             'secret': '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',
-#             'key': ''
-#         }
-#     }
-# }
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
