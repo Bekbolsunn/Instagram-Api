@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import CustomUser
 
-#Follower, SocialLink
+# Follower, SocialLink
 
 admin.site.register(CustomUser)
 # admin.site.register(Follower)

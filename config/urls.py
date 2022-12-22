@@ -3,12 +3,17 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('api/v1/users/', include('users.urls')),
-    path('api/v1/posts/', include('posts.urls')),
+apipatterns = [
+    path("api/v1/users/", include("users.urls")),
+    path("api/v1/publications/", include("publications.urls"), name="publications"),
 ]
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("accounts/", include("allauth.urls")),
+]
+
+urlpatterns += apipatterns
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
