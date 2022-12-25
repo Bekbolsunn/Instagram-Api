@@ -1,13 +1,15 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 
-from .serializers import PublicationSerializer
-from .models import Publication
+from .serializers import PostSerializer
+from .models import Post
 from .pagination import PublicationPagination
 
 
-class PublicationView(viewsets.ModelViewSet):
-    queryset = Publication.objects.all()
-    serializer_class = PublicationSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+class PostView(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [AllowAny]
     pagination_class = PublicationPagination
+
+

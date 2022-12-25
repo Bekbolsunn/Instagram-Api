@@ -44,7 +44,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     "users",
-    "oauth_app",
+    # "oauth_app",
     # "posts",
     "publications",
     # "base",
@@ -96,7 +96,7 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "new_file",
     }
 }
 
@@ -170,7 +170,7 @@ SIMPLE_JWT = {
 }
 
 """
-OAuth 2.0 = Google provider
+All-OAuth = Google provider
 """
 
 AUTHENTICATION_BACKENDS = [
@@ -191,7 +191,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 SOCIAL_AUTH_URL_NAMESPACE = "social"
 
-SITE_ID = 2
+SITE_ID = 3
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
